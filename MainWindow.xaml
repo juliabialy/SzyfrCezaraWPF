@@ -1,0 +1,74 @@
+<Window x:Class="SzyfrCezaraWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Szyfrowanie. Wykonane przez Julia Biały"
+        Width="900" Height="500"
+        Background="#5F9EA0">
+
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- LEWA STRONA -->
+        <StackPanel Grid.Column="0" Margin="10">
+
+            <TextBlock Text="Podaj wartość klucza"
+                       Foreground="#FAEBD7"
+                       FontSize="16"
+                       Margin="0,0,0,5"/>
+
+            <TextBox x:Name="KeyTextBox"
+                     Width="120"
+                     Height="25"
+                     Margin="0,0,0,20"/>
+
+            <TextBlock Text="Podaj tekst"
+                       Foreground="#FAEBD7"
+                       FontSize="16"
+                       Margin="0,0,0,5"/>
+
+            <TextBox x:Name="InputTextBox"
+                     Height="200"
+                     Width="300"
+                     AcceptsReturn="True"
+                     TextWrapping="Wrap"/>
+
+            <Button Content="Zaszyfruj"
+                    Width="120"
+                    Height="35"
+                    Margin="0,20,0,0"
+                    Background="#ADD8E6"
+                    Click="Encrypt_Click"/>
+        </StackPanel>
+
+        <!-- PRAWA STRONA -->
+        <StackPanel Grid.Column="1" Margin="20">
+
+            <TextBlock Text="Tekst zaszyfrowany"
+                       Foreground="#FAEBD7"
+                       FontSize="16"
+                       Margin="0,0,0,10"/>
+
+            <Border BorderBrush="#FAEBD7"
+                    BorderThickness="3"
+                    CornerRadius="25"
+                    Height="260"
+                    Padding="15">
+
+                <TextBlock x:Name="OutputTextBlock"
+                           Foreground="#F0F8FF"
+                           TextWrapping="Wrap"/>
+            </Border>
+
+            <Button Content="Zapisz szyfr w pliku"
+                    Width="200"
+                    Height="35"
+                    Margin="0,20,0,0"
+                    HorizontalAlignment="Center"
+                    Background="#ADD8E6"
+                    Click="SaveToFile_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
